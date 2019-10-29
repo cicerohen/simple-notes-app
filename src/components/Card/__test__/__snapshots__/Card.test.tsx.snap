@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Anchor /> Tests should render correctly with props 1`] = `
+<section
+  class="Wrapper-dyuznp kcpkkC"
+>
+  <div>
+    children
+  </div>
+</section>
+`;
+
+exports[`<Anchor /> Tests should render correctly without props 1`] = `
+<section
+  class="Wrapper-dyuznp kcpkkC"
+/>
+`;

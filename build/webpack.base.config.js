@@ -11,7 +11,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|ts|tsx|jsx)$/,
+        test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: [
           {
@@ -20,7 +20,28 @@ module.exports = {
           {
             loader: 'eslint-loader',
             options: {
-              configFile: path.resolve('./.eslintrc')
+              configFile: path.resolve(
+                process.cwd(),
+                './eslint-ts-project-config.json'
+              )
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader'
+          },
+          {
+            loader: 'eslint-loader',
+            options: {
+              configFile: path.resolve(
+                process.cwd(),
+                './eslint-base-config.json'
+              )
             }
           }
         ]
