@@ -2,12 +2,13 @@ import React, { FC, useContext } from 'react';
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 import GridContext from './GridContext';
 import { mediaQueries } from '../../css.settings';
+import { flexBasisCalc } from './utils';
 
-const flexBasis = (
+export const flexBasis = (
   col: number,
   columns: number
 ): FlattenSimpleInterpolation => css`
-  flex-basis: ${(col / columns) * 100}%;
+  flex-basis: ${flexBasisCalc(col, columns)};
 `;
 
 interface StyledProps {
@@ -24,7 +25,7 @@ const Wrapper = styled.div<StyledProps>`
   box-sizing: border-box;
   padding-left: ${({ gutter }) => gutter};
   padding-right: ${({ gutter }) => gutter};
-  ${props => flexBasis(props.columns, props.columns)};
+  ${props => flexBasis(props.columns, props.columns)}
   ${props =>
     props.small &&
     mediaQueries.small`
@@ -49,15 +50,14 @@ interface Props {
   large?: number;
 }
 
-const GridColumn: FC = ({ children, small, medium, large }: Props) => {
+const GridColumn: FC<Props> = ({ children, ...others }) => {
   const { columns, gutter } = useContext(GridContext);
   return (
     <Wrapper
       columns={columns}
       gutter={gutter}
-      small={small}
-      medium={medium}
-      large={large}
+      data-testid="grid-column"
+      {...others}
     >
       {children}
     </Wrapper>

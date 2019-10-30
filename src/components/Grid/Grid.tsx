@@ -10,13 +10,13 @@ interface Props {
   children?: FC | Array<FC>;
 }
 
-export interface GridInterface extends FC {
+export interface GridInterface<T> extends FC<T> {
   Row: FC;
   Column: FC;
   Context: Context<GridContextInterface>;
 }
 
-const Grid: GridInterface = ({ children }: Props) => (
+const Grid: GridInterface<Props> = ({ children }) => (
   <Wrapper>{children}</Wrapper>
 );
 

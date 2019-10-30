@@ -26,17 +26,17 @@ interface MediaSizes {
 }
 
 export const mediaSizes: MediaSizes = {
-  small: '@media screen and (max-width: 39.9375em)',
-  medium: '@media screen and (min-width: 40em)',
-  mediumOnly: '@media screen and (min-width: 40em) and (max-width: 63.9375em)',
-  large: '@media screen and (min-width: 64em)',
-  largeOnly: '@media screen and (min-width: 64em) and (max-width: 74.9375em)'
+  small: 'screen and (max-width: 39.9375em)',
+  medium: 'screen and (min-width: 40em)',
+  mediumOnly: 'screen and (min-width: 40em) and (max-width: 63.9375em)',
+  large: 'screen and (min-width: 64em)',
+  largeOnly: 'screen and (min-width: 64em) and (max-width: 74.9375em)'
 };
 
 export const mediaQueries = Object.keys(mediaSizes).reduce(
   (acc: MediaQuery, size: string) => {
     acc[size] = (strings, ...interpolations) => css`
-      ${(mediaSizes as any)[size]} {
+      [@media ${(mediaSizes as any)[size]}] {
         ${css(strings, ...interpolations)};
       }
     `;

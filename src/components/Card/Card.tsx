@@ -9,6 +9,6 @@ interface Props {
   children?: object | Array<object>;
 }
 
-const Card: FC = ({ children }: Props) => <Wrapper>{children}</Wrapper>;
+const Card: FC<Props> = ({ children }) => <Wrapper>{children}</Wrapper>;
 
 export default Card;
