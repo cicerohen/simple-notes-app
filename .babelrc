@@ -13,11 +13,12 @@
     "react-hot-loader/babel",
     "@babel/plugin-proposal-object-rest-spread",
     "@babel/plugin-transform-async-to-generator",
+    "@babel/transform-runtime",
     [
       "babel-plugin-styled-components",
       {
         "displayName": true,
-        "fileName": false,
+        "fileName": true,
         "ssr": false
       }
     ]
