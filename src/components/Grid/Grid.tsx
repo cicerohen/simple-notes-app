@@ -16,7 +16,7 @@ export interface GridInterface<T> extends FC<T> {
   Context: Context<GridContextInterface>;
 }
 
-const Grid: GridInterface<Props> = ({ children }) => (
+const Grid: GridInterface<Props> = ({ children }: Props) => (
   <Wrapper>{children}</Wrapper>
 );
 

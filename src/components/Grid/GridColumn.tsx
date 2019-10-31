@@ -4,7 +4,7 @@ import GridContext from './GridContext';
 import { mediaQueries } from '../../css.settings';
 import { flexBasisCalc } from './utils';
 
-export const flexBasis = (
+const flexBasis = (
   col: number,
   columns: number
 ): FlattenSimpleInterpolation => css`
@@ -50,14 +50,16 @@ interface Props {
   large?: number;
 }
 
-const GridColumn: FC<Props> = ({ children, ...others }) => {
+const GridColumn: FC<Props> = ({ children, small, medium, large }: Props) => {
   const { columns, gutter } = useContext(GridContext);
   return (
     <Wrapper
       columns={columns}
       gutter={gutter}
+      small={small}
+      medium={medium}
+      large={large}
       data-testid="grid-column"
-      {...others}
     >
       {children}
     </Wrapper>
