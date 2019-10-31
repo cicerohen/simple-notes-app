@@ -36,7 +36,7 @@ export const mediaSizes: MediaSizes = {
 export const mediaQueries = Object.keys(mediaSizes).reduce(
   (acc: MediaQuery, size: string) => {
     acc[size] = (strings, ...interpolations) => css`
-      [@media ${(mediaSizes as any)[size]}] {
+      @media ${(mediaSizes as any)[size]} {
         ${css(strings, ...interpolations)};
       }
     `;
