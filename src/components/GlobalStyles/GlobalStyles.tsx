@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { ROOT_FONT_SIZE } from '../../css.settings';
+import { ROOT_FONT_SIZE } from '../../theme';
 
 import UbuntuRegular from '../../assets/fonts/Ubuntu/Ubuntu-Regular.ttf';
 

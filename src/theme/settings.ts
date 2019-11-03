@@ -5,19 +5,15 @@ import {
 } from 'styled-components';
 
 export const ROOT_FONT_SIZE = '62.5%';
-export const DEFAULT_PADDING = '15px';
+export const DEFAULT_PADDING = '10px';
 
-export const YELLOW_COLOR = '#ffcc00';
+export const YELLOW_COLOR = '#f5b80d';
+export const BLACK_COLOR = '#222';
+export const GREY_LIGHTER_COLOR = '#f1f1f1';
+export const GREY_COLOR = '#ccc';
 export const GREY_DARKER_COLOR = '#333';
 
-interface MediaQuery {
-  [key: string]: (
-    strings: TemplateStringsArray,
-    ...interpolations: SimpleInterpolation[]
-  ) => FlattenSimpleInterpolation;
-}
-
-interface MediaSizes {
+export interface MediaSizesInterface {
   small: string;
   medium: string;
   mediumOnly: string;
@@ -25,7 +21,14 @@ interface MediaSizes {
   largeOnly: string;
 }
 
-export const mediaSizes: MediaSizes = {
+export interface MediaQueryInterface {
+  [key: string]: (
+    strings: TemplateStringsArray,
+    ...interpolations: SimpleInterpolation[]
+  ) => FlattenSimpleInterpolation;
+}
+
+export const mediaSizes: MediaSizesInterface = {
   small: 'screen and (max-width: 39.9375em)',
   medium: 'screen and (min-width: 40em)',
   mediumOnly: 'screen and (min-width: 40em) and (max-width: 63.9375em)',
@@ -34,7 +37,7 @@ export const mediaSizes: MediaSizes = {
 };
 
 export const mediaQueries = Object.keys(mediaSizes).reduce(
-  (acc: MediaQuery, size: string) => {
+  (acc: MediaQueryInterface, size: string) => {
     acc[size] = (strings, ...interpolations) => css`
       @media ${(mediaSizes as any)[size]} {
         ${css(strings, ...interpolations)};
@@ -45,17 +48,7 @@ export const mediaQueries = Object.keys(mediaSizes).reduce(
   {}
 );
 
-const palettes = {
-  primary: YELLOW_COLOR,
-  secondary: GREY_DARKER_COLOR
-};
-
-const baseTheme = {
-  palettes
-};
-
-export const themes = {
-  default: {
-    ...baseTheme
-  }
+export const palette = {
+  primaryColor: YELLOW_COLOR,
+  secondaryColor: GREY_DARKER_COLOR
 };

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
-import { themes } from '../css.settings';
+import styled from 'styled-components';
+import { ThemeProvider } from '../theme';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Grid from '../components/Grid';
@@ -11,7 +11,7 @@ const MainContent = styled.main`
 `;
 
 const App: FC = () => (
-  <ThemeProvider theme={themes.default}>
+  <ThemeProvider>
     <div>
       <Header />
       <MainContent>

@@ -1,7 +1,7 @@
 import React, { FC, useContext } from 'react';
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 import GridContext from './GridContext';
-import { mediaQueries } from '../../css.settings';
+import { mediaQueries } from '../../theme';
 import { flexBasisCalc } from './utils';
 
 const flexBasis = (

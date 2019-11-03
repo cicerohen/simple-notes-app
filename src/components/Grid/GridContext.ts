@@ -1,5 +1,5 @@
 import React from 'react';
-import { DEFAULT_PADDING } from '../../css.settings';
+import { DEFAULT_PADDING } from '../../theme';
 
 export interface GridContextInterface {
   columns: number;
