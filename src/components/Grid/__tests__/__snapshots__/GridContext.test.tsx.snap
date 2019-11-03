@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GridContext/> tests should have a correctly default value 1`] = `
+<div>
+  <p>
+    columns:
+    12
+  </p>
+  <p>
+    gutter:
+    10px
+  </p>
+</div>
+`;
