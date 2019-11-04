@@ -1,16 +1,7 @@
 import React, { FC, FormEvent } from 'react';
 import styled from 'styled-components';
 import { DEFAULT_PADDING } from '../../theme';
-
-export type onChangePropType = (event: FormEvent<HTMLInputElement>) => void;
-
-export interface InputPropsInterface {
-  type?: string;
-  placeholder?: string;
-  className?: string;
-  value?: string | number;
-  onChange?: onChangePropType;
-}
+import { InputPropsInterface } from './interfaces';
 
 const Wrapper = styled.input`
   min-height: 30px;
