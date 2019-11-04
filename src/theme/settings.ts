@@ -7,11 +7,13 @@ import {
 export const ROOT_FONT_SIZE = '62.5%';
 export const DEFAULT_PADDING = '10px';
 
-export const YELLOW_COLOR = '#f5b80d';
+export const YELLOW_COLOR = '#ffc107';
+export const ORANGE_COLOR = '#f08700';
 export const BLACK_COLOR = '#222';
 export const GREY_LIGHTER_COLOR = '#f1f1f1';
 export const GREY_COLOR = '#ccc';
 export const GREY_DARKER_COLOR = '#333';
+export const RED_COLOR = '#f41313';
 
 export interface MediaSizesInterface {
   small: string;
@@ -49,6 +51,9 @@ export const mediaQueries = Object.keys(mediaSizes).reduce(
 );
 
 export const palette = {
+  initialColor: GREY_LIGHTER_COLOR,
   primaryColor: YELLOW_COLOR,
-  secondaryColor: GREY_DARKER_COLOR
+  secondaryColor: GREY_DARKER_COLOR,
+  warningColor: ORANGE_COLOR,
+  dangerColor: RED_COLOR
 };
