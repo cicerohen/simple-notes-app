@@ -41,13 +41,13 @@ const Wrapper = styled.button<ButtonStyledPropsInterface>`
   ${props =>
     props.variant === 'initial' &&
     variantMixin({
-      color: props.theme.palette.secondaryColor,
+      color: props.theme.palette.primaryTextColor,
       backgroundColor: props.theme.palette.initialColor
     })};
   ${props =>
     props.variant === 'primary' &&
     variantMixin({
-      color: props.theme.palette.secondaryColor,
+      color: props.theme.palette.primaryTextColor,
       backgroundColor: props.theme.palette.primaryColor
     })};
   ${props =>
@@ -67,6 +67,12 @@ const Wrapper = styled.button<ButtonStyledPropsInterface>`
     variantMixin({
       color: props.theme.palette.initialColor,
       backgroundColor: props.theme.palette.dangerColor
+    })};
+  ${props =>
+    props.variant === 'success' &&
+    variantMixin({
+      color: props.theme.palette.initialColor,
+      backgroundColor: props.theme.palette.successColor
     })};
 `;
 
