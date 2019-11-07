@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { variantMixin } from './mixins';
+import { buttonVariantMixin } from './mixins';
 
 import { ButtonPropsInterface, ButtonStyledPropsInterface } from './interfaces';
 
@@ -40,37 +40,37 @@ const Wrapper = styled.button<ButtonStyledPropsInterface>`
 
   ${props =>
     props.variant === 'initial' &&
-    variantMixin({
+    buttonVariantMixin({
       color: props.theme.palette.primaryTextColor,
       backgroundColor: props.theme.palette.initialColor
     })};
   ${props =>
     props.variant === 'primary' &&
-    variantMixin({
+    buttonVariantMixin({
       color: props.theme.palette.primaryTextColor,
       backgroundColor: props.theme.palette.primaryColor
     })};
   ${props =>
     props.variant === 'secondary' &&
-    variantMixin({
+    buttonVariantMixin({
       color: props.theme.palette.initialColor,
       backgroundColor: props.theme.palette.secondaryColor
     })};
   ${props =>
     props.variant === 'warning' &&
-    variantMixin({
+    buttonVariantMixin({
       color: props.theme.palette.initialColor,
       backgroundColor: props.theme.palette.warningColor
     })};
   ${props =>
     props.variant === 'danger' &&
-    variantMixin({
+    buttonVariantMixin({
       color: props.theme.palette.initialColor,
       backgroundColor: props.theme.palette.dangerColor
     })};
   ${props =>
     props.variant === 'success' &&
-    variantMixin({
+    buttonVariantMixin({
       color: props.theme.palette.initialColor,
       backgroundColor: props.theme.palette.successColor
     })};

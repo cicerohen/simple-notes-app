@@ -1,15 +1,16 @@
-import { css, FlattenSimpleInterpolation } from 'styled-components';
+import { css } from 'styled-components';
 import { darken } from 'polished';
-import { variantMixinType } from './types';
+import { buttonVariantMixinType } from './types';
 
-export const variantMixin: variantMixinType = ({
+export const buttonVariantMixin: buttonVariantMixinType = ({
   color,
   backgroundColor
 }) => css`
   color: ${color};
   background-color: ${backgroundColor};
   border-color: ${darken('0.05', backgroundColor)};
-  &:hover:enabled {
+  &:hover:enabled,
+  &:focus {
     background-color: ${darken('0.05', backgroundColor)};
   }
 `;

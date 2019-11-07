@@ -1,6 +1,6 @@
 import { FlattenSimpleInterpolation } from 'styled-components';
 
-export type variantType =
+export type buttonVariantType =
   | 'initial'
   | 'primary'
   | 'secondary'
@@ -10,7 +10,7 @@ export type variantType =
 
 export type sizeType = 'small' | 'medium' | 'large';
 
-export type variantMixinType = ({
+export type buttonVariantMixinType = ({
   color,
   backgroundColor
 }: {

@@ -1,7 +1,7 @@
-import { variantType, sizeType } from './types';
+import { buttonVariantType, sizeType } from './types';
 
 export interface ButtonStyledPropsInterface {
-  variant?: variantType;
+  variant?: buttonVariantType;
   size?: sizeType;
   disabled?: boolean;
 }
