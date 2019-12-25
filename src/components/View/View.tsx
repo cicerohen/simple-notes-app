@@ -25,9 +25,9 @@ const Subtitle = styled.h2`
 `;
 
 interface ViewPropsInterface {
-  title?: object | Array<object> | string;
+  title?: JSX.Element | Array<JSX.Element> | string;
   subtitle?: object | Array<object> | string;
-  children?: object | Array<object>;
+  children?: JSX.Element | Array<JSX.Element>;
 }
 
 const View: FC<ViewPropsInterface> = ({

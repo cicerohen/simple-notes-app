@@ -1,14 +1,25 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
+import { DEFAULT_PADDING } from '../../theme';
+
+import { cardActiveMixin } from './mixins';
+import { CardPropsInterface } from './interfaces';
 
 const Wrapper = styled.section`
-  box-shadow: 0 0 5px #999;
+  border-width: 1px;
+  border-style: solid;
+  padding: ${DEFAULT_PADDING};
+  border-color: ${props => props.theme.palette.initialColor};
+  border-radius: 5px;
+  &:hover {
+    ${props =>
+      cardActiveMixin({ borderColor: props.theme.palette.initialColor })}
+  }
 `;
 
-interface Props {
-  children?: object | Array<object>;
-}
-
-const Card: FC<Props> = ({ children }: Props) => <Wrapper>{children}</Wrapper>;
+const Card: FC<CardPropsInterface> = ({
+  children,
+  className
+}: CardPropsInterface) => <Wrapper className={className}>{children}</Wrapper>;
 
 export default Card;

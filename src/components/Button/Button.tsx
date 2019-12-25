@@ -8,8 +8,6 @@ const Wrapper = styled.button<ButtonStyledPropsInterface>`
   border-radius: 5px;
   display: flex;
   cursor: pointer;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
   border-width: 1px;
   border-style: solid;
   text-transform: uppercase;

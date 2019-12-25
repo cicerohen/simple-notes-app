@@ -3,17 +3,19 @@ import styled from 'styled-components';
 import Button from '../Button';
 import { IconButtonPropsInterface } from './interfaces';
 
-const Wrapper = styled(Button)`
-  padding: 10px;
+const Wrapper = styled(Button).attrs(() => ({
+  size: 'large'
+}))`
+  padding: 0.5em;
   border-radius: 50%;
 `;
 
 const IconButton: FC<IconButtonPropsInterface> = ({
   component,
   variant,
-  size
+  className
 }: IconButtonPropsInterface) => (
-  <Wrapper variant={variant} size={size}>
+  <Wrapper variant={variant} className={className}>
     {component({})}
   </Wrapper>
 );
