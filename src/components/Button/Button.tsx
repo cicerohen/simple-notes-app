@@ -79,6 +79,7 @@ const Button: FC<ButtonPropsInterface> = ({
   variant = 'initial',
   size = 'small',
   disabled = false,
+  onClick,
   className
 }: ButtonPropsInterface) => (
   <Wrapper
@@ -86,6 +87,7 @@ const Button: FC<ButtonPropsInterface> = ({
     variant={variant}
     size={size}
     disabled={disabled}
+    onClick={onClick}
   >
     {children}
   </Wrapper>

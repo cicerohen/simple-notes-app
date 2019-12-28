@@ -9,4 +9,5 @@ export interface ButtonStyledPropsInterface {
 export interface ButtonPropsInterface extends ButtonStyledPropsInterface {
   children?: string | JSX.Element;
   className?: string;
+  onClick?: () => void;
 }
