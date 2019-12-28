@@ -1,50 +1,37 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { MdCheck, MdAddAlert, MdArchive } from 'react-icons/md';
-import { AiOutlineUserAdd } from 'react-icons/ai';
 import Card from '../Card';
-import { NoteCardPropsInterface } from './interfaces';
 
-import IconButton from '../IconButton';
-import { DEFAULT_PADDING } from '../../theme';
+import NoteCardHeader from '../NoteCardHeader';
+import NoteCardFooter from '../NoteCardFooter';
 
-const Wrapper = styled(Card)`
+import { useNoteCardContext } from './contexts';
+import {
+  NoteCardStyledPropsInterface,
+  NoteCardPropsInterface
+} from './interfaces';
+
+const Wrapper = styled(Card)<NoteCardStyledPropsInterface>`
   position: relative;
-`;
-
-const ToggleSelectionBtn = styled(IconButton)`
-  position: absolute;
-  left: -${DEFAULT_PADDING};
-  top: -${DEFAULT_PADDING};
+  padding: 2rem;
 `;
 
 const Body = styled.div`
   min-height: 250px;
 `;
 
-const Footer = styled.footer`
-  display: flex;
-  margin-top: ${DEFAULT_PADDING};
-  > * {
-    margin-left: 2.5px;
-    margin-right: 2.5px;
-  }
-`;
-
 const NoteCard: FC<NoteCardPropsInterface> = ({
   title,
   children
-}: NoteCardPropsInterface) => (
-  <Wrapper>
-    <ToggleSelectionBtn component={MdCheck} />
-    <header>{title}</header>
-    <Body>{children}</Body>
-    <Footer>
-      <IconButton component={MdAddAlert} />
-      <IconButton component={AiOutlineUserAdd} />
-      <IconButton component={MdArchive} />
-    </Footer>
-  </Wrapper>
-);
+}: NoteCardPropsInterface) => {
+  const { isSelected } = useNoteCardContext();
+  return (
+    <Wrapper isSelected={isSelected}>
+      <NoteCardHeader title={title} />
+      <Body>{children}</Body>
+      <NoteCardFooter />
+    </Wrapper>
+  );
+};
 
 export default NoteCard;
