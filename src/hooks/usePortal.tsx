@@ -9,7 +9,10 @@ const usePortal: usePortalType = id => {
 
   useEffect(() => {
     container.current.id = id;
-    document.body.appendChild(container.current);
+    const alreadyInBody = !!document.querySelector(`#${id}`);
+    if (!alreadyInBody) {
+      document.body.appendChild(container.current);
+    }
     return () => container.current && container.current.remove();
   }, []);
 
