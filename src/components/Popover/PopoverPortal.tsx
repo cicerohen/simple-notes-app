@@ -6,7 +6,7 @@ import Popover from './Popover';
 
 import usePortal from '../../hooks/usePortal';
 
-import { PopoverPortalPropsInterface } from './interfaces';
+import { PopoverPortalPropsInterface } from './types';
 
 const PopoverPortal: FC<PopoverPortalPropsInterface> = ({
   children,

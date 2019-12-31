@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { PopoverPropsInterface } from './interfaces';
+import { PopoverPropsInterface, PopoverStyledPropsInterface } from './types';
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<PopoverStyledPropsInterface>`
   position: fixed;
-  left: 200px;
-  top: 200px;
+  left: ${props => props.xPos}
+  top: ${props => props.yPos}
 `;
 
 const Popover: React.FC<PopoverPropsInterface> = ({
@@ -14,14 +14,21 @@ const Popover: React.FC<PopoverPropsInterface> = ({
   onClickOutFn
 }: PopoverPropsInterface): any => {
   const ref = React.useRef();
+  const [position, setPosition] = React.useState({ x: 0, y: 0 });
+
   const evenHandler = React.useCallback(
     e => {
       const outsideClick = !ref.current.contains(e.target);
+      const coords = e.target.getBoundingClientRect();
+      setPosition({
+        x: coords.x,
+        y: coords.y
+      });
       if (onClickOutFn && outsideClick) {
         onClickOutFn();
       }
     },
-    [onClickOutFn]
+    [ref.current, onClickOutFn, setPosition]
   );
 
   React.useEffect(() => {
@@ -31,7 +38,11 @@ const Popover: React.FC<PopoverPropsInterface> = ({
     };
   }, []);
 
-  return <Wrapper ref={ref}>{children}</Wrapper>;
+  return (
+    <Wrapper ref={ref} xPos={position.x} yPos={position.y}>
+      {children}
+    </Wrapper>
+  );
 };
 
 export default Popover;
