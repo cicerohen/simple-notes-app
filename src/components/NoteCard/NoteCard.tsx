@@ -6,10 +6,7 @@ import NoteCardHeader from '../NoteCardHeader';
 import NoteCardFooter from '../NoteCardFooter';
 
 import { useNoteCardContext } from './contexts';
-import {
-  NoteCardStyledPropsInterface,
-  NoteCardPropsInterface
-} from './interfaces';
+import { NoteCardStyledPropsInterface, NoteCardPropsInterface } from './types';
 
 const Wrapper = styled(Card)<NoteCardStyledPropsInterface>`
   position: relative;

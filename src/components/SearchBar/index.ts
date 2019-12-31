@@ -1,2 +1,2 @@
 export { default } from './SearchBar';
-export * from './interfaces';
+export * from './types';

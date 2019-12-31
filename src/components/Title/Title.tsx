@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { TitlePropsInterface } from './interfaces';
+import { TitlePropsInterface } from './types';
 
 const Wrapper = styled.h1`
   text-transform: uppercase;

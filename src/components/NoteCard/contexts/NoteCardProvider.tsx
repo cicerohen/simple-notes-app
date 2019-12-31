@@ -4,7 +4,7 @@ import NoteCardContext from './NoteCardContext';
 import {
   NoteCardProviderPropsInterface,
   NoteCardContextProvider
-} from './interfaces';
+} from './types';
 
 const NoteCardProvider: FC<NoteCardProviderPropsInterface> = ({
   children

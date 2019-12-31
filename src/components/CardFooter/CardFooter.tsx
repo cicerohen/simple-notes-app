@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 
-import { CardFooterPropsInterface } from './interfaces';
+import { CardFooterPropsInterface } from './types';
 
 const Wrapper = styled.footer``;
 

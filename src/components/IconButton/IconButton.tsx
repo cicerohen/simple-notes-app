@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import Button from '../Button';
-import { IconButtonPropsInterface } from './interfaces';
+import { IconButtonPropsInterface } from './types';
 
 const Wrapper = styled(Button).attrs(() => ({}))`
   padding: 0.5em;

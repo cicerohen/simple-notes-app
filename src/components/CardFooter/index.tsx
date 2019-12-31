@@ -1,2 +1,2 @@
 export { default } from './CardFooter';
-export * from './interfaces';
+export * from './types';

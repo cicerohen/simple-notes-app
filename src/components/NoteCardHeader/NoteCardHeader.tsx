@@ -7,7 +7,7 @@ import IconButton from '../IconButton';
 import CardHeader from '../CardHeader';
 import { useNoteCardContext } from '../NoteCard';
 
-import { NoteCardHeaderPropsInterface } from './interfaces';
+import { NoteCardHeaderPropsInterface } from './types';
 
 const Wrapper = styled(CardHeader)`
   display: flex;

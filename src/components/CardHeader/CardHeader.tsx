@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 
-import { CardHeaderPropsInterface } from './interfaces';
+import { CardHeaderPropsInterface } from './types';
 
 const Wrapper = styled.header``;
 

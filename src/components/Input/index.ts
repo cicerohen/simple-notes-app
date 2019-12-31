@@ -1,2 +1,2 @@
 export { default } from './Input';
-export * from './interfaces';
+export * from './types';

@@ -4,7 +4,7 @@ import { FaSearch } from 'react-icons/fa';
 import StyledInput from '../Input';
 import IconButton from '../IconButton';
 import { DEFAULT_PADDING } from '../../theme';
-import { SearchBarPropsInterface } from './interfaces';
+import { SearchBarPropsInterface } from './types';
 
 const Wrapper = styled.div`
   background-color: ${props => props.theme.palette.initialColor};

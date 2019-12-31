@@ -1,3 +1,3 @@
 export * from './contexts';
-export * from './interfaces';
+export * from './types';
 export { default } from './NoteCard';

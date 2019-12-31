@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { buttonVariantMixin } from './mixins';
 
-import { ButtonPropsInterface, ButtonStyledPropsInterface } from './interfaces';
+import { ButtonPropsInterface, ButtonStyledPropsInterface } from './types';
 
 const Wrapper = styled.button<ButtonStyledPropsInterface>`
   border-radius: 5px;

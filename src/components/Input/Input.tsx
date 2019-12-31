@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { DEFAULT_PADDING } from '../../theme';
-import { InputPropsInterface } from './interfaces';
+import { InputPropsInterface } from './types';
 
 const Wrapper = styled.input`
   min-height: 30px;

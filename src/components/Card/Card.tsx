@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { DEFAULT_PADDING } from '../../theme';
 
 import { cardActiveMixin } from './mixins';
-import { CardPropsInterface } from './interfaces';
+import { CardPropsInterface } from './types';
 
 const Wrapper = styled.section`
   border-width: 1px;
